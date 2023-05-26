@@ -1,4 +1,4 @@
-package minsang.toy.springguide.chat;
+package minsang.toy.chat.springguide;
 
 public class HelloMessage {
 
