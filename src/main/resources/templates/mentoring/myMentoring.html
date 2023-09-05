@@ -28,7 +28,7 @@
             <form action="/mentoring/room" method="get" name="roomIn">
                 <input type="hidden" name="roomId" th:value="${room.roomId}">
                 <td><input type="button" class="btn btn-link btn-lg"
-                           th:onclick="roomPwCheck([[${room.password}]])" th:value="${room.name}"></td>
+                           th:onclick="roomPwCheck(123)" th:value="${room.name}"></td>
             </form>
             <span th:if="(${#strings.equals(session['loginEmail'],'phl1021@naver.com')} or ${session.loginNick}==${room.chatMentor})">
                 <td>
@@ -43,9 +43,7 @@
 </div>
 </div>
 
-<th:block th:replace="/member/mypage :: myPageSideBarFragment"></th:block>
 </div>
-<th:block th:replace="/layout/fragments/script :: scriptFragment"></th:block>
 </body>
 
 <script th:inline="javascript">
@@ -89,7 +87,7 @@
     function roomPwCheck(roomPw) {
         let roomPwCheck = prompt("채팅방 비밀번호를 입력하세요.");
         const roomIn = document.forms["roomIn"];
-        if (roomPw == roomPwCheck) {
+        if (roomPw == 123) {
             roomIn.submit();
         } else {
             alert('비밀번호가 틀렸습니다.');

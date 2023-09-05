@@ -1,4 +1,4 @@
-package minsang.toy.chat.hellocdpa;
+package minsang.toy.chat.gorany;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

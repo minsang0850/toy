@@ -7,14 +7,14 @@ import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
-@Controller
+//@Controller
 @RequiredArgsConstructor
 public class StompChatController {
 
     private final SimpMessagingTemplate template; //특정 Broker로 메세지를 전달
     private final ChatRepository cr;
     private final ChatRoomRepository crr;
-    private final ChatService cs;
+    private final ChatServiceImpl cs;
 
     //Client 가 SEND 할 수 있는 경로
     //stompConfig 에서 설정한 applicationDestinationPrefixes 와 @MessageMapping 경로가 병합됨
@@ -22,7 +22,6 @@ public class StompChatController {
     @MessageMapping(value = "/chat/enter")
     public void enter(ChatMessageDetailDTO message) {
         message.setMessage(message.getWriter() + "님이 채팅방에 참여하였습니다.");
-
 
         List<ChatMessageDetailDTO> chatList = cs.findAllChatByRoomId(message.getRoomId());
         if(chatList != null){

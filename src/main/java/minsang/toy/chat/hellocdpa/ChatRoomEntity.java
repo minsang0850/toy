@@ -28,4 +28,12 @@ public class ChatRoomEntity {
         chatRoomEntity.setChatMentor(chatMentor);
         return chatRoomEntity;
     }
+
+    public static ChatRoomEntity getMockChatRoomEntity(){
+        ChatRoomEntity chatRoomEntity = new ChatRoomEntity();
+        chatRoomEntity.setRoomName("방A");
+        chatRoomEntity.setRoomId("roomId-A");
+        chatRoomEntity.setChatMentor("mementor");
+        return chatRoomEntity;
+    }
 }

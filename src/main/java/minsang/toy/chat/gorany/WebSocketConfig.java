@@ -1,4 +1,4 @@
-package minsang.toy.chat.hellocdpa;
+package minsang.toy.chat.gorany;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;

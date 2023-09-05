@@ -1,25 +1,23 @@
 <!DOCTYPE html>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
 
-<!-- 공통 헤더-->
-<th:block th:replace="/layout/fragments/head :: headFragment"></th:block>
-
 <body>
-<th:block th:replace="/layout/fragments/navbar :: navbarFragment"></th:block>
+
 <div class="modal fade" id="chatModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="staticBackdropLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
 
             <div class="user-container modal-header">
-                <label class="modal-title" id="staticBackdropLabel" for="nickname">[[${room.name}]]</label>
+                <label class="modal-title" id="staticBackdropLabel" for="nickname">nickname</label>
                 <span type="text" id="nickname" th:text="${session['loginNick']}"
                       th:value="${session['loginNick']}"></span>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <div class="display-container modal-body" style="height: 1000px">
+            <div class="display-container modal-body" style="height: 600px">
                 <ul class="chatting-list" id="msgArea">
                 </ul>
             </div>
@@ -43,9 +41,9 @@
 </div>
 
 </body>
-<th:block th:replace="/layout/fragments/script :: scriptFragment"></th:block>
 <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+
 <script th:inline="javascript">
     $(document).ready(function () {
         let roomName = [[${room.name}]];
@@ -83,7 +81,7 @@
                         li.classList.add(username === this.writer ? "sent" : "received")
                         const dom = `<span class="profile">
                     <span class="user">${this.writer}</span>
-                    <img class="image" src="https://png.pngtree.com/png-vector/20191009/ourmid/pngtree-user-icon-png-image_1796659.jpg" alt="any">
+                    <img class="image" src="https://png.pngtree.com/png-vector/20191009/ourmid/pngtree-user-icon-png-image_1796659.jpg" alt="any" height="60" width="60">
                     </span>
                     <span class="message">${this.msg}</span>`;
                         li.innerHTML = dom;
