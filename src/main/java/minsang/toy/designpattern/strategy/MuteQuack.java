@@ -1,0 +1,7 @@
+package minsang.toy.designpattern.strategy;
+
+public class MuteQuack implements QuackBehavior{
+    public void quack() {
+        System.out.println("...");
+    }
+}
