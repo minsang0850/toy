@@ -13,9 +13,6 @@ public class CacheConfig {
 
     @Bean
     CacheManager cacheManager() {
-        SimpleCacheManager simpleCacheManager = new SimpleCacheManager();
-        simpleCacheManager.setCaches(/* ${Collection<? extends Cache> caches} */);
-        CaffeineCacheManager
-        return simpleCacheManager;
+        return new CaffeineCacheManager("cacheMethod");
     }
 }

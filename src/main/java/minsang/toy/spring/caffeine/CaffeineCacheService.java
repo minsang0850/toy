@@ -11,7 +11,7 @@ public class CaffeineCacheService {
         return 1;
     }
 
-    @Cacheable
+    @Cacheable("cacheMethod")
     public int cacheMethod() throws InterruptedException {
         Thread.sleep(1000);
         return 1;
